@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #c5e4e7;
+	font-family: "Space Mono", monospace;
+	gap: 87px;
+}
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+main {
+	width: 100%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+}
+.card {
+	width: 60%;
+	height: 100%;
+	border-radius: 25px;
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 32px;
+	padding: 32px;
+}
+.entering-info {
+	border-radius: 32px;
+}
+form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.text-input {
+	border: none;
+	background-color: #f3f9fa !important;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #00474b;
+	letter-spacing: 0px;
+	text-align: right;
+}
+#bill-input{
+    background: url("assets/$.svg") no-repeat left;
+}
+#people-input{
+    background: url("assets/utilisateur.png") no-repeat left;
+    background-size: 20px;
+}
+input:focus {
+	outline: solid 2px #26c2ae;
+}
+label {
+	font-weight: 700;
+	font-size: 16px;
+	color: #5e7a7d;
+}
+.tip-select-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 141px);
+	grid-template-rows: 48px 48px;
+	grid-gap: 15px;
+}
+.tip-button {
+	font-size: 24px;
+	font-weight: 700;
+	border-radius: 5px;
+	background-color: #00474b;
+	color: white;
+	border: none;
+}
+.tip-button-selected,
+.reset {
+	background-color: #26c2ae;
+	color: #00474b;
+}
+.tip-button:hover,
+.reset:hover {
+	background-color: #9fe8df;
+	color: #00474b;
+}
+button:hover {
+	cursor: pointer;
+}
+
+.custom-tip {
+	font-size: 24px;
+	font-weight: 700;
+	border-radius: 5px;
+	color: #547878;
+	border: none;
+	background-color: #f3f9fa;
+	text-align: center;
+}
+.result-info {
+	background-color: #00474b;
+	border-radius: 15px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.results-organizer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	gap: 25px;
+	width: 100%;
+}
+#result {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+}
+.cost-title {
+	font-size: 16px;
+	font-weight: 700;
+}
+span {
+	font-weight: 700;
+	font-size: 13px;
+	color: #7f9d9f;
+}
+.amount-result {
+	font-size: 48px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	color: #26c2ae;
+}
+.reset {
+	width: 90%;
+	height: 10%;
+	border-radius: 5px;
+	border: none;
+	font-size: 24px;
+	font-weight: 700;
+	padding: 10px;
+}

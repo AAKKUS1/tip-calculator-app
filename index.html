@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Tip Calculator</title>
+	</head>
+	<body>
+		<header>
+			<img src="assets/SPLITTER.svg" alt="Splitter Logo" />
+		</header>
+
+		<main>
+			<section class="card">
+				<section class="entering-info">
+					<form>
+						<label for="bill-input">Bill</label>
+						<input
+							id="bill-input"
+							class="text-input"
+							type="number"
+							placeholder="0"
+						/>
+
+						<label for="tip">Select Tip %</label>
+						<div class="tip-select-grid">
+							<button id="tipA" class="tip-button" type="button">5%</button>
+							<button id="tipB" class="tip-button" type="button">10%</button>
+							<button id="tipC" class="tip-button" type="button">15%</button>
+							<button id="tipD" class="tip-button" type="button">25%</button>
+							<button id="tipE" class="tip-button" type="button">50%</button>
+							<input
+								id="tipD"
+								class="custom-tip"
+								type="number"
+								placeholder="Custom"
+							/>
+						</div>
+
+						<label for="people-input">Number of People</label>
+						<input
+							id="people-input"
+							class="text-input"
+							type="number"
+							placeholder="0"
+						/>
+					</form>
+				</section>
+
+				<section class="result-info">
+					<div class="results-organizer">
+						<div id="result">
+							<div class="tip-amount-text">
+								<p class="cost-title">Tip Amount</p>
+								<span>/person</span>
+							</div>
+							<p id="tip-cost" class="amount-result">$0.00</p>
+						</div>
+
+						<div id="result">
+							<div class="total-amount-text">
+								<p class="cost-title">Total</p>
+								<span>/person</span>
+							</div>
+							<p id="total-cost" class="amount-result">$0.00</p>
+						</div>
+					</div>
+					<button id="reset" class="reset">RESET</button>
+				</section>
+			</section>
+		</main>
+		<script src="index.js"></script>
+	</body>
+</html>
