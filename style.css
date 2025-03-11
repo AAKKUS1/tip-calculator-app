@@ -57,6 +57,10 @@ form {
 	letter-spacing: 0px;
 	text-align: right;
 }
+button:focus{
+	background-color: #26C2AE;
+	color: #00474b;
+}
 #bill-input{
     background: url("assets/$.svg") no-repeat left;
 }
@@ -157,4 +161,8 @@ span {
 	font-size: 24px;
 	font-weight: 700;
 	padding: 10px;
+}
+.amount-orga{
+	display: flex;
+	gap: 10px;
 }

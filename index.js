@@ -1,51 +1,70 @@
-//inputs
+// Inputs
+const billInput = document.getElementById("bill-input");
+const peopleInput = document.getElementById("people-input");
 
-const rawBill = document.getElementById('bill-input');
-const peopleNumber =document.getElementById('people-input');
+// Tips
+const tip5 = document.getElementById("tipA");
+const tip10 = document.getElementById("tipB");
+const tip15 = document.getElementById("tipC");
+const tip25 = document.getElementById("tipD");
+const tip50 = document.getElementById("tipE");
+const tipCustom = document.getElementById("tipF");
 
-//tips
+// Displayer
+const tipCostDisplayer = document.getElementById("tip-cost");
+const totalCostDisplayer = document.getElementById("total-cost");
 
-const tip5 = document.getElementById('tipA');
-const tip10 = document.getElementById('tipB');
-const tip15 = document.getElementById('tipC');
-const tip25 = document.getElementById('tipD');
-const tip50 = document.getElementById('tipE');
-const tipC = document.getElementById('tipF');
+// Reset
+const reset = document.getElementById("reset");
 
-//displayer
-
-const tipCostDisplayer = document.getElementById('tip-cost');
-const totalCostDisplayer = document.getElementById('total-cost');
-
-//reset
-
-const reset = document.getElementById('reset');
-
-//////////////////////
+////////////
 
 let tipValue = 0;
 
-tip5.addEventListener('click', () => {
-    tipValue = 5;
-})
+function calculateTip() {
+	let rawBill = parseInt(billInput.value) || 0;
+	let peopleNumber = parseInt(peopleInput.value) || 1;
 
-tip10.addEventListener('click', () => {
-    tipValue = 10;
-})
+	let tipAmount = (rawBill * tipValue) / 100;
+	let totalAmount = rawBill + tipAmount;
 
-tip15.addEventListener('click', () => {
-    tipValue = 15;
-})
+	console.log(tipAmount);
 
-tip25.addEventListener('click', () => {
-    tipValue = 25;
-})
+	tipCostDisplayer.textContent = (tipAmount / peopleNumber).toFixed(2);
+	totalCostDisplayer.textContent = (totalAmount / peopleNumber).toFixed(2);
+}
 
-tip50.addEventListener('click', () => {
-    tipValue = 50;
-    console.log(tipAmount);
+tip5.addEventListener("click", () => {
+	tipValue = 5;
+	calculateTip();
+});
+tip10.addEventListener("click", () => {
+	tipValue = 10;
+	calculateTip();
+});
+tip15.addEventListener("click", () => {
+	tipValue = 15;
+	calculateTip();
+});
+tip25.addEventListener("click", () => {
+	tipValue = 25;
+	calculateTip();
+});
+tip50.addEventListener("click", () => {
+	tipValue = 50;
+	calculateTip();
+});
+tipCustom.addEventListener("input", () => {
+	tipValue = tipCustom.value;
+	calculateTip();
+});
+billInput.addEventListener("input", calculateTip);
+peopleInput.addEventListener("input", calculateTip);
 
-})
-
-let tipAmount = rawBill.value * tipValue ;
-
+reset.addEventListener("click", () => {
+	billInput.value = "";
+	peopleInput.value = "";
+	tipValue = 0;
+	tipCostDisplayer.textContent = "0.00";
+	totalCostDisplayer.textContent = "0.00";
+});
