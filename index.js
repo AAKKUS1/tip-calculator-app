@@ -55,7 +55,11 @@ tip50.addEventListener("click", () => {
 	calculateTip();
 });
 tipCustom.addEventListener("input", () => {
-	tipValue = tipCustom.value;
+	tipValue = Number(tipCustom.value);
+
+	if (tipCustom.value < 0) {
+		tipValue = Math.abs(tipCustom.value);
+	}
 	calculateTip();
 });
 billInput.addEventListener("input", calculateTip);
